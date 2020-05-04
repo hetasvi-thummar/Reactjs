@@ -1,0 +1,272 @@
+*{
+    user-select: none;
+}
+
+body {
+    background-color: rgb(210, 211, 215);
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    margin: 30px;
+    font-family: 'Roboto', sans-serif;
+    flex-direction: row;
+}
+@media only screen and (min-width: 375px) and (max-width:424px) 
+{
+    .container{
+        margin: 0px;
+    }
+}
+
+.box {
+    height: 100%;
+    width: 35%;
+    background-color: white;
+    padding: 40px;
+}
+@media only screen and (min-width: 425px) and (max-width:767px) {
+    .box{
+        padding:30px;
+    }
+}
+@media only screen and (min-width: 768px) and (max-width:1023px){
+    .box{
+        padding: 20px;
+    }
+}
+
+.box p{
+    font-size: 13px;
+}
+
+.box1 {
+    
+    width: 35%;
+    text-align: center;
+    padding: 40px;
+    background-position: center center;
+    background-size: cover;
+    background-image: -webkit-linear-gradient( rgba(232,0,0,0.6), rgba(232,0,0,0.6)), url(./laptop.jpg);
+    
+}
+
+.box1 h2{
+    color: white;
+    text-decoration: underline;
+    font-size: 40px;
+    background: transparent;
+}
+
+@media only screen and (min-width: 375px) and (max-width:424px) 
+{
+    .box1 h2{
+        font-size: 30px;
+    }
+}
+
+@media only screen and (min-width: 425px) and (max-width:767px) 
+{
+    .box1 h2{
+        font-size: 30px;
+    }
+}
+
+.box1 p{
+    color: white;
+    
+    font-size: 20px;
+
+}
+
+.img{
+    height: 30px;
+    width: 30px;
+    padding-left: 30px;
+}
+@media only screen and (min-width: 375px) and (max-width:424px) {
+    .img{
+        padding-left: 10px;
+    }
+}
+@media only screen and (min-width: 425px) and (max-width:767px) {
+    .img{
+        padding-left: 10px;
+    }
+}
+@media only screen and (min-width: 768px) and (max-width:1023px){
+    .img{
+        padding-left: 10px;
+        margin-top: 15px;
+    }
+}
+.img1{
+    height: 20px;
+    width: 20px;
+    margin-left:-28px!important;
+    color: grey;
+}
+@media only screen and (min-width: 375px) and (max-width:424px) {
+    .img1{
+        margin-left: -15px!important;
+    }
+}
+@media only screen and (min-width: 425px) and (max-width:767px) {
+    .img1{
+        margin-left: -15px!important;
+    }
+}
+
+.link {
+    text-decoration: blue;
+}
+
+.username {
+    border: none;
+    border-bottom: 1px solid gray;
+    width: 75%;
+    height: 10%;
+    margin-top: 20px;
+}
+
+.password {
+    border: none;
+    border-bottom: 1px solid gray;
+    width: 75%;
+    height: 10%;
+    margin-top: 30px;
+}
+
+.button {
+    border-radius: 50px;
+    height: 40px;
+    width: 100px;
+    background-color: blue;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    border: none;
+}
+
+.checkbox{
+    height: 15px;
+    width: 15px;
+}
+@media only screen and (min-width: 375px) and (max-width:424px) {
+    .checkbox{
+        height: 10px;
+        width: 10px;
+    }
+}
+@media only screen and (min-width: 425px) and (max-width:767px) {
+    .checkbox{
+        height: 10px;
+        width: 10px;
+    }
+}
+
+.remember_me{
+    font-size: 15px;
+    padding-right:90px;
+}
+
+@media only screen and (min-width: 375px) and (max-width:424px) 
+{
+    .remember_me{
+        font-size: 13px;
+        padding-right: 0px;
+    }
+}
+@media only screen and (min-width: 425px) and (max-width:767px){
+    .remember_me{
+        font-size: 13px;
+        padding-right: 0px;
+        padding-bottom: 20px;
+    }
+}
+@media only screen and (min-width: 768px) and (max-width:1023px){
+    .remember_me{
+        padding-right: 0px;
+
+    }
+}
+
+
+.forgot_password{
+    font-size: 15px;
+}
+
+@media only screen and (min-width: 375px) and (max-width:424px) {
+    .forgot_password{
+        font-size: 13px;
+    }
+}
+@media only screen and (min-width: 425px) and (max-width:767px){
+    .forgot_password{
+        font-size: 13px;
+    }
+}
+@media only screen and (min-width: 768px) and (max-width:1023px){
+    .forgot_password{
+        font-size: 15px;
+
+    }
+}
+
+
+.sub-div{
+    display:flex;
+    flex-direction: row;
+}
+
+@media only screen and (min-width: 375px) and (max-width:424px) {
+    .sub-div{
+        flex-direction: column;
+    }
+}
+@media only screen and (min-width: 425px) and (max-width:767px){
+    .sub-div{
+        flex-direction: column;
+    }
+}
+@media only screen and (min-width: 768px) and (max-width:1023px){
+    .sub-div{
+        flex-direction: column;
+    }
+}
+
+.or_login{
+   font-size: 15px;
+}
+
+@media only screen and (min-width: 375px) and (max-width:424px) {
+    .or_login{
+        font-size: 13px;
+       padding-bottom: 10px;
+    }
+}
+.last_container{
+    display: flex;
+    flex-direction: row;
+}
+@media only screen and (min-width: 375px) and (max-width:424px) {
+    .last_container{
+        flex-direction: column;
+    }
+}
+@media only screen and (min-width: 425px) and (max-width:767px) {
+    .last_container{
+        flex-direction: column;
+    }
+}
+@media only screen and (min-width: 768px) and (max-width:1023px){
+    .last_container{
+        flex-direction: column;
+    }
+}
+.logos{
+    display: flex;
+    flex-direction: row;
+}
+
