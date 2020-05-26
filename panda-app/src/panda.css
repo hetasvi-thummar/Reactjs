@@ -1,0 +1,47 @@
+.panda-img{
+    height: 1.5rem;
+    width: 2.5rem;
+    padding-right: 10px;
+    
+}
+label{
+    font-size: 20px;
+    
+}
+.icons{
+    height: 1rem;
+    width: 2.5rem;
+    padding-top: 0.75rem;
+    font-size: 20px;
+}
+
+.btn{
+    padding: 0.35rem;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+}
+
+.middlebar{
+    padding: 3px;
+    border: 1px solid red;
+}
+
+
+.all-border {
+    border-style: inset;
+}
+
+.left-panel-item {
+    cursor: -webkit-grab;
+    cursor: grab;
+    border-bottom-style: double;
+}
+
+.middle-panel-item {
+    border-bottom-style: ridge;
+}
+
+.scroll-panel{
+    height: 480px;
+    overflow-y: auto;
+}
