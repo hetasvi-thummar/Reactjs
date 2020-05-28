@@ -19,19 +19,20 @@ const Middlebar = () => {
         dispatch(fetchNews(params.country));
     }, [dispatch, params.country]);
     console.log(news);
+
     const [singlenews, setsinglenews] = useState({});
 
 
     return (
         <div className="row">
-            <div className="col-sm-6 all-border scroll-panel">
+            <div className="col-sm-4 all-border scroll-panel">
                 {loading ? (
                     <div>Loading...</div>
                 ) : (
                         <>
                             {news !== null &&
                                 news.map(news => (
-                                    <div key={news.id} className="middle-panel-item">
+                                    <div key={news.id} className={news.title === singlenews.title ? "middle-panel-item setcolor" : "middle-panel-item"}>
                                         <div><h5>{news.source.name}</h5></div>
                                         <div>{news.title}</div>
                                         <div><a href="#1" onClick={() => setsinglenews(news)}>Read More</a></div>
@@ -40,7 +41,7 @@ const Middlebar = () => {
                         </>
                     )}
             </div>
-            <div className="col-sm-6 all-border scroll-panel">
+            <div className="col-sm-8 all-border scroll-panel">
                 <Rightbar singlenews={singlenews}></Rightbar>
             </div>
         </div>

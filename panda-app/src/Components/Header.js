@@ -15,7 +15,7 @@ const Header = () => {
 
         <div className="row border">
             <div className="col-sm-8">
-                <div className="pt-3">
+                <div className="pt-2">
                     <img className="panda-img" src={panda} alt="panda"></img>
                     <label>Panda</label>
                 </div>
@@ -25,16 +25,12 @@ const Header = () => {
                 <Navbar color="faded" light expand="md">
                     <NavbarToggler onClick={toggleNavbar} />
                     <Collapse isOpen={!collapsed} navbar>
-                        <Nav navbar >
+                        <Nav navbar className="pl-5" >
                             <NavItem className="icons"><FontAwesomeIcon icon={faPlus} /></NavItem>
                             <NavItem className="icons"><FontAwesomeIcon icon={faListAlt} /></NavItem>
                             <NavItem className="icons"><FontAwesomeIcon icon={faPaw} /></NavItem>
-                            <NavItem>
-                                <NavLink href="#"><Button color="light">Log in</Button></NavLink>
-                            </NavItem>
-                            <NavItem className="pr-3">
-                                <NavLink href="#"><Button color="success">Sign up</Button></NavLink>
-                            </NavItem>
+                            <NavItem className="pr-3" href="#"><Button color="light" className="btn">Log in</Button></NavItem>
+                            <NavItem className="pr-3" href="#"><Button color="success" className="btn">Sign up</Button></NavItem>
                             <NavItem className="icons"><FontAwesomeIcon icon={faEllipsisH} /></NavItem>
                         </Nav>
                     </Collapse>

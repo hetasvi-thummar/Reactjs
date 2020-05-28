@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { fetchNews } from '../redux/actions/news';
 
@@ -18,13 +18,23 @@ const Leftbar = () => {
         { key: "in", value: "India" },
         { key: "id", value: "Indonesia" }];
 
+    const [singlecountry, setsinglecountry] = useState(null);
+
+    const setCountry = (key) => {
+        dispatch(fetchNews(key))
+        setsinglecountry(key);
+    }
 
     return (
-        <div className="all-border scroll-panel">
-            {countries !== null &&
-                countries.map((country) => (
-                    <div className="p-2 left-panel-item" onClick={() => dispatch(fetchNews(country.key))}>{country.value}</div>
-                ))}
+        <div className="row">
+            <div className="col-sm-12 all-border">
+                {countries !== null &&
+                    countries.map((country) => (
+                        <div
+                            className={singlecountry === country.key ? "p-2 left-panel-item setcolor" : "p-2 left-panel-item"}
+                            onClick={() => setCountry(country.key)}>{country.value}</div>
+                    ))}
+            </div>
         </div>
     );
 }
