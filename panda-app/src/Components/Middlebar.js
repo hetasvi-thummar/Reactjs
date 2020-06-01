@@ -22,10 +22,15 @@ const Middlebar = () => {
 
     const [singlenews, setsinglenews] = useState({});
 
+    const setsinglenewsfromDropdown = (e) => {
+        const single = news.find((item) => item.title === e.target.value);
+        setsinglenews(single);
+    }
+
 
     return (
         <div className="row">
-            <div className="col-sm-4 all-border scroll-panel">
+            <div className="col-sm-4 all-border scroll-panel web-display">
                 {loading ? (
                     <div>Loading...</div>
                 ) : (
@@ -39,6 +44,21 @@ const Middlebar = () => {
                                     </div>
                                 ))}
                         </>
+                    )}
+            </div>
+            <div className="col-sm-4 mobile-display">
+                {loading ? (
+                    <div>loading</div>
+                ) : (
+                        <select onChange={setsinglenewsfromDropdown}>
+                            <option value="">Please select any news</option>
+                            {news !== null &&
+                                news.map(news => (
+                                    <option value={news.title}>
+                                        {news.title}
+                                    </option>
+                                ))}
+                        </select>
                     )}
             </div>
             <div className="col-sm-8 all-border scroll-panel">

@@ -15,6 +15,12 @@ label{
     font-size: 20px;
     
 }
+@media(max-width:767px){
+    .icons{
+        padding: 1.5rem;
+    }
+}
+
 
 .btn{
     font-size: 16px;
@@ -57,7 +63,20 @@ label{
 .display-none{
     display: none;
     
+}
 
+.mobile-display{
+    display: none;
+}
+
+@media(max-width:767px){
+    .web-display{display: none;}
+    .mobile-display{display: inline-block;}
+}
+
+select{
+    width: 100%;
+    margin-bottom: 2rem;
 }
 
 

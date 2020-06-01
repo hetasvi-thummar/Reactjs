@@ -12,9 +12,7 @@ const Leftbar = () => {
         { key: "br", value: "Brazil" },
         { key: "ca", value: "Canada" },
         { key: "co", value: "Colombia" },
-        { key: "cn", value: "China" },
         { key: "eg", value: "Egypt" },
-        { key: "hk", value: "Hong Kong" },
         { key: "in", value: "India" },
         { key: "id", value: "Indonesia" }];
 
@@ -25,15 +23,32 @@ const Leftbar = () => {
         setsinglecountry(key);
     }
 
+    const setCountryfromDropdown = (e) => {
+        dispatch(fetchNews(e.target.value))
+
+    }
+
+
     return (
         <div className="row">
-            <div className="col-sm-12 all-border">
+            <div className="col-sm-12 all-border web-display">
                 {countries !== null &&
                     countries.map((country) => (
                         <div
                             className={singlecountry === country.key ? "p-2 left-panel-item setcolor" : "p-2 left-panel-item"}
                             onClick={() => setCountry(country.key)}>{country.value}</div>
                     ))}
+            </div>
+            <div className="col-sm-12 mobile-display">
+
+                <select onChange={setCountryfromDropdown}>
+                    <option value="">Please select any country</option>
+                    {countries !== null &&
+                        countries.map((country) => (
+                            <option value={country.key}>{country.value}</option>
+
+                        ))}
+                </select>
             </div>
         </div>
     );
