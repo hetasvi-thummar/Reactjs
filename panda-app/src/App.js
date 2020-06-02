@@ -6,11 +6,12 @@ import { store } from './redux/store';
 
 
 const App = () => {
-  return (<Provider store={store} >
-    <Router>
-      <Home path="/" />
-    </Router>
-  </Provider >
+  return (
+    <><Provider store={store} >
+      <Router>
+        <Home path="/" />
+      </Router>
+    </Provider ></>
   )
 }
 

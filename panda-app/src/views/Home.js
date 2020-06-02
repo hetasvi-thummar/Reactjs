@@ -1,22 +1,21 @@
 import React from 'react'; import "bootstrap/dist/css/bootstrap.min.css";
-import { Header, Leftbar, Middlebar } from '../Components';
+import { Header, Leftbar, Middlebar, Title, Leftbar1, Middlebar1 } from '../Components';
 
 
 const Home = () => {
 
     return (
-        <div>
-            <Header></Header>
+        <>
+            <Title></Title>
             <div className="row">
                 <div className="col-sm-2">
-                    <Leftbar></Leftbar>
+                    <Leftbar1></Leftbar1>
                 </div>
                 <div className="col-sm-10">
-                    <Middlebar></Middlebar>
-
+                    <Middlebar1></Middlebar1>
                 </div>
             </div>
-        </div>
+        </>
     );
 };
 
