@@ -26,10 +26,10 @@ label{
     font-size: 16px;
     
 }
-.middlebar{
+/* .middlebar{
     padding: 3px;
     border: 1px solid red;
-}
+} */
 
 
 .all-border {
@@ -44,6 +44,11 @@ label{
 
 .middle-panel-item {
     border-bottom-style: ridge;
+    padding: 0.75rem;
+}
+
+.right-panel-item{
+    padding: 0.75rem;
 }
 
 .scroll-panel{
@@ -79,6 +84,9 @@ select{
     margin-bottom: 2rem;
 }
 
+.title-div{
+    border: 1 px solid red;
+}
 
 
 

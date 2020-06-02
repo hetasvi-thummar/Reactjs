@@ -31,7 +31,7 @@ const Leftbar = () => {
 
     return (
         <div className="row">
-            <div className="col-sm-12 all-border web-display">
+            <div className="col-sm-12 all-border web-display scroll-panel">
                 {countries !== null &&
                     countries.map((country) => (
                         <div

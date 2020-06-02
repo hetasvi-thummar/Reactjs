@@ -15,50 +15,6 @@ const Header = () => {
 
         <div className="row border">
 
-            {/* <div className="pt-2">
-                <img className="panda-img" src={panda} alt="panda"></img>
-                <label>Panda</label>
-            </div>
-            <Navbar color="faded" light expand="md">
-                <div className="col-sm-8">
-                    <Nav>
-                        <img className="panda-img" src={panda} alt="panda"></img>
-                        <label>Panda</label>
-                    </Nav></div>
-                <div className="col-sm-2"></div>
-                <div className="col-sm-2">
-                    <NavbarToggler onClick={toggleNavbar} />
-                    <Collapse isOpen={!collapsed} navbar>
-                        <Nav navbar >
-                            <NavItem className="icons"><FontAwesomeIcon icon={faPlus} /></NavItem>
-                            <NavItem className="icons"><FontAwesomeIcon icon={faListAlt} /></NavItem>
-                            <NavItem className="icons"><FontAwesomeIcon icon={faPaw} /></NavItem>
-                            <NavItem className="pr-3" href="#"><Button color="light" className="btn">Log in</Button></NavItem>
-                            <NavItem className="pr-3" href="#"><Button color="success" className="btn">Sign up</Button></NavItem>
-                            <NavItem className="icons"><FontAwesomeIcon icon={faEllipsisH} /></NavItem>
-                        </Nav>
-                    </Collapse></div>
-            </Navbar> */}
-
-            {/* <Navbar color="faded" light expand="md">
-                <NavbarBrand href="/" className="mr-auto">
-                    <img className="panda-img" src={panda} alt="panda"></img>
-                    <label>Panda</label>
-                </NavbarBrand>
-                <NavbarToggler onClick={toggleNavbar} className="mr-2" />
-                <Collapse isOpen={!collapsed} navbar>
-                    <Nav navbar>
-                        <NavItem>
-                            <NavLink href="/components/">Components</NavLink>
-                        </NavItem>
-                        <NavItem>
-                            <NavLink href="https://github.com/reactstrap/reactstrap">GitHub</NavLink>
-                        </NavItem>
-                    </Nav>
-                    <NavbarText><Button color="light" className="btn">Log in</Button></NavbarText>
-                    <NavbarText><Button color="light" className="btn">Log in</Button></NavbarText>
-                </Collapse>
-            </Navbar> */}
 
             <div className="col-8 mt-2">
                 <img className="panda-img" src={panda} alt="panda"></img>

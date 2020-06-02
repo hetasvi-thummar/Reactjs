@@ -7,6 +7,7 @@ const Rightbar = ({ singlenews }) => {
     const date1 = moment(publishedAt).fromNow();
     console.log(date1);
 
+
     // const date = new Date();
     // console.log(date)
     // const date2 = moment(date).format("DD-MM-yyyy HH:mm:ss")
@@ -14,7 +15,8 @@ const Rightbar = ({ singlenews }) => {
 
 
     return (
-        <div className={title === undefined ? "display-none scroll-panel" : ""}>
+        <div className={title === undefined ? "display-none scroll-panel right-panel-item" : ""}>
+
             <div><h4>{title}</h4></div>
             <div>{date1}</div>
             <div><img src={urlToImage} className="newsimg"></img></div>
