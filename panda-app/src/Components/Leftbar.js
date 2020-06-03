@@ -4,7 +4,9 @@ import { fetchNews } from '../redux/actions/news';
 
 
 const Leftbar = () => {
+
     const dispatch = useDispatch();
+
     const countries = [
         { key: "ar", value: "Argentina" },
         { key: "au", value: "Australia" },
@@ -31,19 +33,17 @@ const Leftbar = () => {
 
     }
 
-
     return (
         <>
             <div className="col-sm-12 all-border web-display scroll-panel">
                 {countries !== null &&
                     countries.map((country) => (
-                        <div
-                            className={singlecountry === country.key ? "p-2 left-panel-item setcolor" : "p-2 left-panel-item"}
+                        <div className={singlecountry === country.key ? " left-panel-item setcolor" : "left-panel-item pl-4"}
                             onClick={() => setCountry(country.key)}>{country.value}</div>
                     ))}
             </div>
-            <div className="col-sm-12 mobile-display">
 
+            <div className="col-sm-12 mobile-display left-panel-item">
                 <select onChange={setCountryfromDropdown}>
                     <option value="">Please select any country</option>
                     {countries !== null &&

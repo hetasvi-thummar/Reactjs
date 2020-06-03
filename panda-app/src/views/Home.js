@@ -1,6 +1,6 @@
-import React from 'react'; import "bootstrap/dist/css/bootstrap.min.css";
-import { Header, Leftbar, Middlebar, Title, Leftbar1, Middlebar1 } from '../Components';
-
+import React from 'react';
+import "bootstrap/dist/css/bootstrap.min.css";
+import { Leftbar, Middlebar, Title } from '../Components';
 
 const Home = () => {
 
@@ -9,10 +9,10 @@ const Home = () => {
             <Title></Title>
             <div className="row">
                 <div className="col-sm-2">
-                    <Leftbar1></Leftbar1>
+                    <Leftbar></Leftbar>
                 </div>
                 <div className="col-sm-10">
-                    <Middlebar1></Middlebar1>
+                    <Middlebar></Middlebar>
                 </div>
             </div>
         </>
