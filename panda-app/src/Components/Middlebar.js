@@ -20,6 +20,7 @@ const Middlebar = () => {
     return (
         <>
             <div className="row web-display">
+                {console.log(`news : ${JSON.stringify(news)}`)}
                 <div className="col-sm-5 all-border scroll-panel  ">{loading ? (<div>Loading...</div>) :
                     (
                         <>{news !== null &&
