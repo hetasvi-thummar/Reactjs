@@ -1,3 +1,17 @@
+body{
+    background-color: whitesmoke;
+}
+
+.container-md{
+    padding: 0rem;
+    max-width: 1270px;
+    background-color: white;
+}
+
+.row{
+    margin: 0rem;
+}
+
 .panda-img{
     height: 2rem;
     width: 2.5rem;
@@ -32,6 +46,23 @@ label{
     border: 1px solid;
 }
 
+.dropbtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 6px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  
+
+
+select {
+    width: 100%;
+    margin-bottom: 0rem !important;
+}
+
 .left-panel-item {
     cursor: -webkit-grab;
     cursor: pointer;
@@ -50,8 +81,9 @@ label{
 .middle-panel-item {
     /* border-bottom-style: ridge; */
     padding: 0.50rem;
-    border-top:1px  grey;
-    border-bottom:1px solid grey;
+    border-top:1px solid gainsboro;
+    border-bottom:1px solid gainsboro;
+    cursor: pointer;
    
 }
 @media(max-width:767px){
@@ -65,7 +97,9 @@ label{
 }
 
 .right-panel-item{
-    padding: 0.75rem;
+    padding: 0.50rem;
+    border-top: 1px solid gainsboro;
+    border-bottom: 1px solid gainsboro;
 }
 @media(max-width:767px){
     .right-panel-item{
@@ -75,7 +109,7 @@ label{
 
 
 .scroll-panel{
-    height: 525px;
+    height: 540px;
     overflow-y: auto;
 }
 
@@ -85,7 +119,7 @@ label{
 }
 
 .newsimg{
-    height: 20%;
+    height: 100%;
     width: 100%;
 }
 
@@ -137,6 +171,9 @@ select{
 
 .navbar{
     padding: 0rem;
+}
+.dropdown{
+    padding-left: 15rem;
 }
 
 

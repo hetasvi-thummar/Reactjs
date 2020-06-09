@@ -5,9 +5,10 @@ import { Leftbar, Middlebar, Title } from '../Components';
 const Home = () => {
 
     return (
-        <>
-            <Title></Title>
+        <div className="container">
             <div className="row">
+                <Title></Title></div>
+            <div className="row mr-1">
                 <div className="col-sm-2">
                     <Leftbar></Leftbar>
                 </div>
@@ -15,7 +16,8 @@ const Home = () => {
                     <Middlebar></Middlebar>
                 </div>
             </div>
-        </>
+
+        </div >
     );
 };
 

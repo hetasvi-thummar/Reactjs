@@ -1,0 +1,34 @@
+.header{
+    background-image: url(./Components/images/header1.jpeg);
+    background-position: center center;
+    background-size: cover;
+}
+
+.textbox{
+    border-radius: 9px;
+    width: 50%;
+}
+h2,h1,p,h4{
+    color: white;
+}
+
+.event-div{
+    border-radius: 1rem;
+}
+
+.event-div:hover{
+    
+    box-shadow: 2px 2px 2px 2px rgba(212, 195, 195, 0.75); 
+
+}
+
+.icon{
+    font-size: 25px;
+    color:skyblue;
+}
+
+.iconright{
+    font-size: 25px;
+    color: lightgreen
+}
+

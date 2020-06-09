@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { Rightbar } from '.';
 
-const Middlebar = () => {
+const Middlebar1 = () => {
 
     const { loading, news } = useSelector(state => ({
         loading: state.postsReducer.loading,
@@ -18,27 +18,29 @@ const Middlebar = () => {
 
 
     return (
+
         <>
             <div className="row web-display">
-                {/* {console.log(`news : ${JSON.stringify(news)}`)} */}
-                <div className="col-sm-5 all-border scroll-panel  ">{loading ? (<div>Loading...</div>) :
+
+                <div className="col-sm-3 shadow">{loading ? (<div>Loading...</div>) :
                     (
-                        <>{news !== null &&
-                            news.map(news => (
-                                <div key={news.id} className={news.title === singlenews.title ? "middle-panel-item setcolor" : "middle-panel-item"}>
-                                    <h5>{news.source.name}</h5>
-                                    <p>{news.title}</p>
-                                    <a href="#1" onClick={() => setsinglenews(news)}>Read More</a>
-                                </div>
-                            ))}
+                        <>
+                            <div className="pt-2 pb-2 pl-2">Browse by topic</div>
+                            {news !== null &&
+                                news.map(news => (
+                                    <div key={news.id} className={news.title === singlenews.title ? "middle-panel-item " : "middle-panel-item"}>
+                                        {/* <p onClick={() => setsinglenews(news)}>{news.source.name}</p> */}
+                                        <p onClick={() => setsinglenews(news)}>{news.title}</p>
+                                        {/* <a href="#1" onClick={() => setsinglenews(news)}>Read More</a> */}
+                                    </div>
+                                ))}
                         </>
                     )}
                 </div>
-                <div className="col-sm-7 all-border scroll-panel right-panel-item">
+                <div className="col-sm-9  right-panel-item">
                     <Rightbar singlenews={singlenews}></Rightbar>
                 </div>
             </div>
-
             <div className="row mobile-display">
                 <div className="col-sm-4">{loading ? (<div className="pl-3">loading</div>) :
                     (<>
@@ -59,7 +61,8 @@ const Middlebar = () => {
                 </div>
             </div>
         </>
+
     )
 }
 
-export default Middlebar;
+export default Middlebar1;

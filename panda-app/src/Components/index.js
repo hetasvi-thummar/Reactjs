@@ -1,7 +1,7 @@
 import Leftbar from "./Leftbar";
-import Middlebar from "./Middlebar";
+import Middlebar1 from "./Middlebar1";
 import Rightbar from "./Rightbar";
 import Title from "./Title";
 
 
-export { Leftbar, Middlebar, Rightbar, Title }
+export { Leftbar, Middlebar1, Rightbar, Title }

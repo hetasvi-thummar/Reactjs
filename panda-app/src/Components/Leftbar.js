@@ -49,7 +49,6 @@ const Leftbar = () => {
                     {countries !== null &&
                         countries.map((country) => (
                             <option value={country.key}>{country.value}</option>
-
                         ))}
                 </select>
             </div>

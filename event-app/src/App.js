@@ -1,15 +1,15 @@
 import React from 'react';
 import { Router } from '@reach/router';
-import Home1 from './views/Home1';
+import Home from './Views/Home';
 import { Provider } from "react-redux";
-import { store } from './redux/store';
+import { store } from './Redux/store';
 
 
 const App = () => {
   return (
     <><Provider store={store} >
       <Router>
-        <Home1 path="/" />
+        <Home path="/" />
       </Router>
     </Provider ></>
   )
