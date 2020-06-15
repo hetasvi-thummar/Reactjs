@@ -2,19 +2,26 @@ import React from 'react';
 import "../events.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCouch } from "@fortawesome/free-solid-svg-icons";
+import { Link } from '@reach/router';
+
 
 const Header = () => {
 
+    const mainevent = (value) => {
+        console.log(value);
+    }
 
     return (
         <div className="header">
             <div className="container">
-                <div className="row pt-3">
-                    <div className="col-sm-3"><h2><FontAwesomeIcon icon={faCouch} className="pr-2" />SeatGeek</h2></div>
-                    <div className="col-sm-7  pt-2"><input type="text" placeholder="Search" className="textbox"></input></div>
-                    <div className="col-sm-2"><h4>Login</h4></div>
+                <div className="row pt-3 pl-5">
+                    <div className="col-sm-3"><h2><FontAwesomeIcon icon={faCouch} className="pr-2" /><Link to={'/'} className="text-white">SeatGeek</Link ></h2></div>
+                    <div className="col-sm-5  pt-2"><input type="text" placeholder="Search" className="textbox" onKeyUp={(e) => mainevent(e.target.value)}></input></div>
+                    <div className="col-sm-4 pt-2"><Link to={'/Performers'} className="text-white pr-4">Performers</Link >
+                        <Link to={'/Venues'} className="text-white">Venues</Link ></div>
+
                 </div>
-                <div className="row">
+                <div className="row mt-3">
                     <div className="col-sm-3"></div>
                     <div className="col-sm-6 text-center p-4">
                         <h1>We must stand up against systemic racism.</h1>
