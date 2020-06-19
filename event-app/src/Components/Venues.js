@@ -1,65 +1,86 @@
-import React, { useEffect, useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { fetchVenues } from '../Redux/actions/events';
-import '../events.css';
-import { Button } from 'reactstrap';
-import { navigate } from '@reach/router';
-import Header from './Header';
-import Footer from './Footer';
+import React, { useEffect, useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { fetchVenues, fetchVenuepages } from "../Redux/actions/events";
+import "../events.css";
+import { Button } from "reactstrap";
+import { navigate } from "@reach/router";
 
+import Title from "./Title";
+import FooterOne from "./FooterOne";
 
 const Venues = () => {
+  const [combinedata, setcombinedata] = useState(null);
+  const dispatch = useDispatch();
 
-    const dispatch = useDispatch();
+  const [state, setstate] = useState(null);
+  const [page, setpage] = useState(2);
 
-    const [state, setstate] = useState(null)
+  const { loading, venues } = useSelector((state) => ({
+    loading: state.postsReducer.loading,
+    venues: state.postsReducer.venues,
+  }));
 
-    const { loading, venues } = useSelector(state => ({
-        loading: state.postsReducer.loading,
-        venues: state.postsReducer.venues
-    }));
+  const { venuepages } = useSelector((state) => ({
+    loading: state.postsReducer.loading,
+    venuepages: state.postsReducer.venuepages,
+  }));
 
-    useEffect(() => {
-        dispatch(fetchVenues())
-    }, [dispatch, state]);
+  useEffect(() => {
+    dispatch(fetchVenues(page));
+    setcombinedata(venues);
+  }, [dispatch, state]);
 
-    console.log(loading, venues);
+  const setpages = (page) => {
+    dispatch(fetchVenuepages(page));
+    setpage(page + 1);
+    if (venuepages !== null) {
+      setcombinedata([...combinedata, ...venuepages.venues]);
+    }
+    console.log(`combinedata:${JSON.stringify(combinedata)}`);
+  };
 
-    return (
-        <>
-            <Header></Header>
-            <div className="container-md  mt-5">
-                <div className="row pl-5 "><h5>Venues</h5></div>
-                <div className="row mt-2">
-                    <div className="col-sm-8">
-                        {venues !== null && venues.map(venue => (
-                            <div key={venue.id}>
-                                <div className="row  p-2 m-2 event-div">
-                                    <div className="col-sm-3">
-                                        <div className="event-title"><img className="performer-div" src={"https://unsplash.it/80/60"} alt="performer" /></div>
-                                        {/* <div className="event-subtitle">{moment(event.datetime_utc).format('ddd hh:mm a')}</div>  */}
-                                    </div>
-                                    <div className="col-sm-7">
-                                        <div className="event-title">{venue.name}</div>
-                                        <div className="event-subtitle">{venue.address},{venue.display_location}--{venue.country}</div>
-
-                                    </div>
-
-                                    <div className="col-sm-2">
-                                        <Button color="primary" className="button " onClick={() => navigate("/Venue_events", { state: { newstate: venue.state } })}>
-                                            {venue.stats.event_count !== null ? venue.stats.event_count : "Track"}
-                                        </Button>
-
-                                    </div>
-                                </div>
-                            </div>
-                        ))}
+  return (
+    <>
+      <Title></Title>
+      <div className="container-md  mt-5">
+        <div className="row pl-5 ">
+          <h5>Venues</h5>
+        </div>
+        <div className="row mt-2">
+          {combinedata !== null &&
+            combinedata.map((venue) => (
+              <div className="pl-5 pb-4">
+                <div>
+                  <img
+                    className="performer-div"
+                    src={"https://unsplash.it/280/210"}
+                    alt="performer"
+                  />
+                  <div
+                    className="pt-2 font-weight-bold"
+                    onClick={() =>
+                      navigate("/Venueevents", {
+                        state: { newstate: venue.state },
+                      })
+                    }
+                  >
+                    {venue.name}
+                    <div>
+                      <span>State:</span>
+                      {venue.state}
                     </div>
+                  </div>
                 </div>
-            </div>
-            <Footer></Footer>
-        </>
-    );
+              </div>
+            ))}
+        </div>
+        <div>
+          <Button onClick={() => setpages(page)}>Load More</Button>
+        </div>
+      </div>
+      <FooterOne></FooterOne>
+    </>
+  );
 };
 
 export default Venues;

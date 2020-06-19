@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { fetchEvents, fetchEventpages } from "../Redux/actions/events";
-import moment from "moment";
+import { fetchSingleperformer } from "../Redux/actions/events";
 import "../events.css";
+
 import {
   Card,
   CardLink,
@@ -16,39 +16,29 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheck } from "@fortawesome/free-solid-svg-icons";
 import header from "../Components/images/header1.jpeg";
+import moment from "moment";
+import Title from "./Title";
+import { FooterOne } from ".";
 
-const Events = () => {
-  const [mergedata, setmergedata] = useState(null);
+const Performerevents = (props) => {
   const dispatch = useDispatch();
 
-  const [page, setpage] = useState(2);
+  const [slug, setslug] = useState(null);
 
-  const { loading, events } = useSelector((state) => ({
+  const { loading, singleperformer } = useSelector((state) => ({
     loading: state.postsReducer.loading,
-    events: state.postsReducer.events,
+    singleperformer: state.postsReducer.singleperformer,
   }));
 
-  const { eventpages } = useSelector((state) => ({
-    loading: state.postsReducer.loading,
-    eventpages: state.postsReducer.eventpages,
-  }));
+  console.log(singleperformer);
 
   useEffect(() => {
-    dispatch(fetchEvents(page));
-    setmergedata(events);
+    dispatch(fetchSingleperformer(props.location.state.newslug));
   }, [dispatch]);
-
-  const setpages = (page) => {
-    dispatch(fetchEventpages(page));
-    setpage(page + 1);
-    if (eventpages !== null) {
-      setmergedata([...mergedata, ...eventpages.events]);
-    }
-    console.log(`mergedata:${JSON.stringify(mergedata)}`);
-  };
 
   return (
     <>
+      <Title></Title>
       <div className="container-md  mt-5">
         <div className="row pl-5 ">
           <h5>Upcoming Events</h5>
@@ -56,8 +46,8 @@ const Events = () => {
 
         <div className="row mt-5">
           <div className="col-sm-8">
-            {mergedata !== null &&
-              mergedata.map((event) => (
+            {singleperformer !== null &&
+              singleperformer.map((event) => (
                 <div key={event.id}>
                   <div className="row  p-3 m-2 event-div">
                     <div className="col-sm-3">
@@ -73,7 +63,6 @@ const Events = () => {
                       <div className="event-subtitle">
                         {event.venue.name}-{event.venue.display_location}
                       </div>
-                      <div>{event.performers.slug}</div>
                     </div>
 
                     <div className="col-sm-2">
@@ -86,9 +75,6 @@ const Events = () => {
                   </div>
                 </div>
               ))}
-            <div className="text-center">
-              <Button onClick={() => setpages(page)}>Load More</Button>
-            </div>
           </div>
           <div className="col-sm-4 pl-5">
             <div className="row">
@@ -149,8 +135,9 @@ const Events = () => {
           </div>
         </div>
       </div>
+      <FooterOne></FooterOne>
     </>
   );
 };
 
-export default Events;
+export default Performerevents;

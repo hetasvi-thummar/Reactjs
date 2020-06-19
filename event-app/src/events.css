@@ -1,65 +1,77 @@
-.header{
-    background-image: url(./Components/images/header1.jpeg);
-    background-position: center center;
-    background-size: cover;
+.header {
+  background-image: url(./Components/images/header1.jpeg);
+  background-position: center center;
+  background-size: cover;
+  size: fixed !important;
 }
 
-.textbox{
-    border-radius: 9px;
-    width: 50%;
+.textbox {
+  border-radius: 9px;
 }
-h2,h1,p,h4{
-    color: white;
-}
-
-.event-div{
-    border-radius: 1rem;
+h2,
+h1,
+p,
+h4 {
+  color: white;
 }
 
-.event-div:hover{
-    
-    box-shadow: 2px 2px 2px 2px rgba(212, 195, 195, 0.75); 
-
+.event-div {
+  border-radius: 1rem;
 }
 
-.icon{
-    font-size: 25px;
-    color:skyblue;
+.event-div:hover {
+  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2),
+    2px 2px 2px 2px rgba(0, 0, 0, 0.19);
+  color: blue;
 }
 
-.iconright{
-    font-size: 20px;
-    color: lightgreen
+.icon {
+  font-size: 25px;
+  color: skyblue;
 }
 
-.button{
-    width: 5rem;
+.iconright {
+  font-size: 20px;
+  color: lightgreen;
 }
 
-.event-title{
-    font-weight:bold;
-    font-size: 16px;
+.button {
+  width: 5rem;
 }
 
-.event-subtitle{
-    color: gray;
-    font-size: 14px;
-}
-.card-subtitle{
-    font-size: 14px;
-    padding-bottom: 10px;
+.event-title {
+  font-weight: bold;
+  font-size: 16px;
 }
 
-.card{
-border: none;
+.event-subtitle {
+  color: gray;
+  font-size: 14px;
+}
+.card-subtitle {
+  font-size: 14px;
+  padding-bottom: 10px;
 }
 
-.performer-div{
-    border-radius: 0.50rem;
+.card {
+  border: none;
 }
 
-.footer-icon{
-    font-size: 35px;
-    color: gray;
-    
+.performer-div {
+  border-radius: 0.5rem;
+}
+
+.footer-icon {
+  font-size: 35px;
+  color: gray;
+}
+
+.pname {
+  width: 280px;
+}
+
+.navbar-expand-md .navbar-collapse {
+  display: flex !important;
+  flex-basis: auto;
+  justify-content: flex-end;
 }
