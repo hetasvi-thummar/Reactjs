@@ -21,7 +21,7 @@ const Home = (props) => {
         <Events path="/" />
         <Performers path="/Performers" />
         <Venues path="/Venues" />
-        <Venueevents path="/Venueevents" />
+        <Venueevents path="/user/:state" />
         <Performerevents path="/user/:slug" image={props.image} />
       </Router>
       <FooterOne></FooterOne>

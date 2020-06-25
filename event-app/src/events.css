@@ -75,13 +75,18 @@ h4 {
   font-size: 35px;
   color: gray;
 }
-
 .pname {
-  width: 280px;
+  width: 260px;
 }
 
 .navbar-expand-md .navbar-collapse {
   display: flex !important;
   flex-basis: auto;
   justify-content: flex-end;
+}
+a {
+  color: black;
+  text-decoration: none;
+  background-color: transparent;
+  width: unset;
 }

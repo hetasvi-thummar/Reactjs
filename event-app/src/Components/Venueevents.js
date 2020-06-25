@@ -3,12 +3,11 @@ import { useSelector, useDispatch } from "react-redux";
 import { fetchSinglevenue } from "../Redux/actions/events";
 import "../events.css";
 import { Button } from "reactstrap";
-
-import Title from "./Title";
-import FooterOne from "./FooterOne";
+import { useParams } from "@reach/router";
 
 const Venueevents = (props) => {
   const dispatch = useDispatch();
+  const params = useParams();
 
   const [state, setstate] = useState(null);
 
@@ -18,8 +17,8 @@ const Venueevents = (props) => {
   }));
 
   useEffect(() => {
-    dispatch(fetchSinglevenue(props.location.state.newstate));
-  }, [dispatch]);
+    dispatch(fetchSinglevenue(params.state));
+  }, [dispatch, params.state]);
 
   return (
     <>

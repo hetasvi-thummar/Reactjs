@@ -45,26 +45,35 @@ const Performers = () => {
           <h5>Performers</h5>
         </div>
         <div className="row mt-2">
-          {alldata !== null &&
-            alldata.map((performer) => (
-              <div className="pl-5 pb-4" key={performer.id}>
-                <div>
-                  <img
-                    className="performer-div"
-                    src={
-                      performer.image !== null
-                        ? performer.image
-                        : "https://unsplash.it/280/210"
-                    }
-                    alt="performer"
-                  />
-                  <div>
-                    <Link to={`/user/${performer.slug}`}>{performer.name}</Link>
+          {loading ? (
+            <div>Loading...</div>
+          ) : (
+            <>
+              {alldata !== null &&
+                alldata.map((performer) => (
+                  <div className="pl-5 pb-4" key={performer.id}>
+                    <div>
+                      <img
+                        className="performer-div"
+                        src={
+                          performer.image !== null
+                            ? performer.image
+                            : "https://unsplash.it/280/210"
+                        }
+                        alt="performer"
+                      />
+                      <div className="pname">
+                        <Link to={`/user/${performer.slug}`}>
+                          {performer.name}
+                        </Link>
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </div>
-            ))}
+                ))}
+            </>
+          )}
         </div>
+
         <div className="text-center">
           <Button onClick={() => setpages(page)}>Load More</Button>
         </div>

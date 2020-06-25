@@ -5,7 +5,7 @@ import "../events.css";
 import { Button } from "reactstrap";
 import { navigate } from "@reach/router";
 import headerv from "./images/header_v.jpg";
-
+import { Link } from "@reach/router";
 import Title from "./Title";
 import FooterOne from "./FooterOne";
 
@@ -56,15 +56,8 @@ const Venues = () => {
                     src={"https://unsplash.it/280/210"}
                     alt="performer"
                   />
-                  <div
-                    className="pt-2 font-weight-bold"
-                    onClick={() =>
-                      navigate("/Venueevents", {
-                        state: { newstate: venue.state },
-                      })
-                    }
-                  >
-                    {venue.name}
+                  <div>
+                    <Link to={`/user/${venue.state}`}>{venue.name}</Link>
                     <div>
                       <span>State:</span>
                       {venue.state}
