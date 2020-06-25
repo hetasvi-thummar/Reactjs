@@ -4,6 +4,7 @@ import { fetchVenues, fetchVenuepages } from "../Redux/actions/events";
 import "../events.css";
 import { Button } from "reactstrap";
 import { navigate } from "@reach/router";
+import headerv from "./images/header_v.jpg";
 
 import Title from "./Title";
 import FooterOne from "./FooterOne";
@@ -36,12 +37,11 @@ const Venues = () => {
     if (venuepages !== null) {
       setcombinedata([...combinedata, ...venuepages.venues]);
     }
-    console.log(`combinedata:${JSON.stringify(combinedata)}`);
+    // console.log(`combinedata:${JSON.stringify(combinedata)}`);
   };
 
   return (
     <>
-      <Title></Title>
       <div className="container-md  mt-5">
         <div className="row pl-5 ">
           <h5>Venues</h5>
@@ -74,11 +74,10 @@ const Venues = () => {
               </div>
             ))}
         </div>
-        <div>
+        <div className="text-center">
           <Button onClick={() => setpages(page)}>Load More</Button>
         </div>
       </div>
-      <FooterOne></FooterOne>
     </>
   );
 };

@@ -2,11 +2,9 @@ import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchPerformers, fetchPages } from "../Redux/actions/events";
 import "../events.css";
-import { navigate } from "@reach/router";
 
 import { Button } from "reactstrap";
-import Title from "./Title";
-import FooterOne from "./FooterOne";
+import { Link } from "@reach/router";
 
 const Performers = () => {
   const [alldata, setalldata] = useState(null);
@@ -31,28 +29,17 @@ const Performers = () => {
     setalldata(performers);
   }, [dispatch, slug]);
 
-  // useEffect(() => {
-  //   dispatch(fetchPages(page));
-  // }, [dispatch]);
-
   const setpages = (page) => {
-    // alert(newpage);
-    // if (newpage === null) {
-    //   newpage = 0;
-    // }
     dispatch(fetchPages(page));
     setpage(page + 1);
 
     if (pages !== null) {
       setalldata([...alldata, ...pages.performers]);
-      // performers.push(performers.setalldata);
     }
-    console.log(`alldata:${JSON.stringify(alldata)}`);
   };
 
   return (
     <>
-      <Title></Title>
       <div className="container-md  mt-5">
         <div className="row pl-5 ">
           <h5>Performers</h5>
@@ -60,7 +47,7 @@ const Performers = () => {
         <div className="row mt-2">
           {alldata !== null &&
             alldata.map((performer) => (
-              <div className="pl-5 pb-4">
+              <div className="pl-5 pb-4" key={performer.id}>
                 <div>
                   <img
                     className="performer-div"
@@ -71,15 +58,8 @@ const Performers = () => {
                     }
                     alt="performer"
                   />
-                  <div
-                    className="pt-2 font-weight-bold pname"
-                    onClick={() =>
-                      navigate(`/Performerevents/`, {
-                        state: { newslug: performer.slug },
-                      })
-                    }
-                  >
-                    {performer.name}
+                  <div>
+                    <Link to={`/user/${performer.slug}`}>{performer.name}</Link>
                   </div>
                 </div>
               </div>
@@ -89,8 +69,6 @@ const Performers = () => {
           <Button onClick={() => setpages(page)}>Load More</Button>
         </div>
       </div>
-
-      <FooterOne></FooterOne>
     </>
   );
 };

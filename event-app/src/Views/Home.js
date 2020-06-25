@@ -1,14 +1,29 @@
-import React from "react";
+import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Events from "../Components/Events";
-import Title from "../Components/Title";
-import { FooterOne } from "../Components";
+import { Router } from "@reach/router";
 
-const Home = () => {
+import {
+  Title,
+  FooterOne,
+  Performers,
+  Performerevents,
+  Venues,
+  Venueevents,
+} from "../Components";
+
+const Home = (props) => {
   return (
     <>
-      <Title></Title>
-      <Events></Events>
+      <Title image={props.image}></Title>
+      <Router>
+        <Events path="/Events" />
+        <Events path="/" />
+        <Performers path="/Performers" />
+        <Venues path="/Venues" />
+        <Venueevents path="/Venueevents" />
+        <Performerevents path="/user/:slug" image={props.image} />
+      </Router>
       <FooterOne></FooterOne>
     </>
   );

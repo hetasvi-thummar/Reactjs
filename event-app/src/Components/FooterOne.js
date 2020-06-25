@@ -5,7 +5,7 @@ import { faCouch, faMobile } from "@fortawesome/free-solid-svg-icons";
 import { Container, Row, Col } from "reactstrap";
 const Footer = () => {
   return (
-    <div className="border-top">
+    <div className="border-top mt-5">
       <Container className="p-3">
         <Row className="pb-3">
           <Col>

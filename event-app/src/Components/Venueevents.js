@@ -18,13 +18,11 @@ const Venueevents = (props) => {
   }));
 
   useEffect(() => {
-    console.log(state);
     dispatch(fetchSinglevenue(props.location.state.newstate));
   }, [dispatch]);
 
   return (
     <>
-      <Title></Title>
       <div className="container-md  mt-5 mb-5">
         <div className="row pl-5 ">
           <h5>Events by values</h5>
@@ -66,7 +64,6 @@ const Venueevents = (props) => {
           </div>
         </div>
       </div>
-      <FooterOne></FooterOne>
     </>
   );
 };

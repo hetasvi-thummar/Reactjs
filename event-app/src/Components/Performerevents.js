@@ -2,43 +2,28 @@ import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchSingleperformer } from "../Redux/actions/events";
 import "../events.css";
-
-import {
-  Card,
-  CardLink,
-  CardTitle,
-  CardSubtitle,
-  CardBody,
-  Button,
-  CardImg,
-  CardImgOverlay,
-} from "reactstrap";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCheck } from "@fortawesome/free-solid-svg-icons";
-import header from "../Components/images/header1.jpeg";
+import { useParams } from "@reach/router";
+import { Button } from "reactstrap";
 import moment from "moment";
-import Title from "./Title";
-import { FooterOne } from ".";
 
-const Performerevents = (props) => {
+const Performerevents = () => {
   const dispatch = useDispatch();
-
-  const [slug, setslug] = useState(null);
+  const params = useParams();
 
   const { loading, singleperformer } = useSelector((state) => ({
     loading: state.postsReducer.loading,
     singleperformer: state.postsReducer.singleperformer,
   }));
-
-  console.log(singleperformer);
+  console.warn(params.slug);
 
   useEffect(() => {
-    dispatch(fetchSingleperformer(props.location.state.newslug));
-  }, [dispatch]);
+    dispatch(fetchSingleperformer(params.slug));
+  }, [dispatch, params.slug]);
+
+  console.log("hello");
 
   return (
     <>
-      <Title></Title>
       <div className="container-md  mt-5">
         <div className="row pl-5 ">
           <h5>Upcoming Events</h5>
@@ -76,66 +61,8 @@ const Performerevents = (props) => {
                 </div>
               ))}
           </div>
-          <div className="col-sm-4 pl-5">
-            <div className="row">
-              <Card className="card">
-                <CardBody>
-                  <CardTitle className="mb-3">
-                    <h6>
-                      Buyer Guarantee <br></br>We will make it right
-                    </h6>
-                  </CardTitle>
-                  <CardSubtitle className="card-subtitle">
-                    <FontAwesomeIcon
-                      icon={faCheck}
-                      className="pr-2 iconright"
-                    />
-                    Canceled events refunded
-                  </CardSubtitle>
-                  <CardSubtitle>
-                    <FontAwesomeIcon
-                      icon={faCheck}
-                      className="pr-2 iconright"
-                    />
-                    Guaranteed get-in
-                  </CardSubtitle>
-                  <CardSubtitle>
-                    <FontAwesomeIcon
-                      icon={faCheck}
-                      className="pr-2 iconright"
-                    />{" "}
-                    Delivered in time
-                  </CardSubtitle>
-                  <CardSubtitle>
-                    <FontAwesomeIcon
-                      icon={faCheck}
-                      className="pr-2 iconright"
-                    />
-                    Same seats as your order
-                  </CardSubtitle>
-                </CardBody>
-                <CardBody>
-                  <CardLink href="#">Learn More</CardLink>
-                </CardBody>
-              </Card>
-            </div>
-            <div className="row p-4">
-              <Card className="text-center p-2">
-                <CardImg width="100%" src={header} alt="Card image cap" />
-                <CardImgOverlay>
-                  <CardBody>
-                    <CardTitle className="text-white">
-                      Get Upcoming Events updates and discover similar events.
-                    </CardTitle>
-                    <Button>Favourite</Button>
-                  </CardBody>
-                </CardImgOverlay>
-              </Card>
-            </div>
-          </div>
         </div>
       </div>
-      <FooterOne></FooterOne>
     </>
   );
 };

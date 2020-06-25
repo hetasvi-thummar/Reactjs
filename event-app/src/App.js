@@ -7,18 +7,14 @@ import Performerevents from "./Components/Performerevents";
 import Performers from "./Components/Performers";
 import Venues from "./Components/Venues";
 import Venueevents from "./Components/Venueevents";
+import Events from "./Components/Events";
+import { Title, FooterOne } from "./Components";
 
 const App = () => {
   return (
     <>
       <Provider store={store}>
-        <Router>
-          <Home path="/" />
-          <Performers path="/Performers" />
-          <Venues path="/Venues" />
-          <Venueevents path="/Venueevents" />
-          <Performerevents path="/Performerevents" />
-        </Router>
+        <Home></Home>
       </Provider>
     </>
   );
