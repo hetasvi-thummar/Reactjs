@@ -24,7 +24,7 @@ const Venueevents = (props) => {
     <>
       <div className="container-md  mt-5 mb-5">
         <div className="row pl-5 ">
-          <h5>Events by values</h5>
+          <h5>Events by vanues</h5>
         </div>
         <div className="row mt-2">
           <div className="col-sm-8">

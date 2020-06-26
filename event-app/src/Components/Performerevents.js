@@ -6,7 +6,7 @@ import { useParams } from "@reach/router";
 import { Button } from "reactstrap";
 import moment from "moment";
 
-const Performerevents = () => {
+const Performerevents = (props) => {
   const dispatch = useDispatch();
   const params = useParams();
 
@@ -31,6 +31,7 @@ const Performerevents = () => {
 
         <div className="row mt-5">
           <div className="col-sm-8">
+          {singleperformer !== null ? }
             {singleperformer !== null &&
               singleperformer.map((event) => (
                 <div key={event.id}>
