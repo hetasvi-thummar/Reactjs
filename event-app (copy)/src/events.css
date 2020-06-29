@@ -1,0 +1,92 @@
+.header {
+  background-color: rgb(23, 115, 230);
+  background-position: center center;
+  background-size: cover;
+  size: fixed !important;
+}
+
+.header-img {
+  position: absolute;
+  width: 100%;
+  height: 60%;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.textbox {
+  border-radius: 9px;
+}
+h2,
+h1,
+p,
+h4 {
+  color: white;
+}
+
+.event-div {
+  border-radius: 1rem;
+}
+
+.event-div:hover {
+  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2),
+    2px 2px 2px 2px rgba(0, 0, 0, 0.19);
+  color: blue;
+}
+
+.icon {
+  font-size: 25px;
+  color: skyblue;
+}
+
+.iconright {
+  font-size: 20px;
+  color: lightgreen;
+}
+
+.button {
+  width: 5rem;
+}
+
+.event-title {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.event-subtitle {
+  color: gray;
+  font-size: 14px;
+}
+.card-subtitle {
+  font-size: 14px;
+  padding-bottom: 10px;
+}
+
+.card {
+  border: none;
+}
+
+.performer-div {
+  border-radius: 0.5rem;
+}
+
+.footer-icon {
+  font-size: 35px;
+  color: gray;
+}
+.pname {
+  width: 260px;
+}
+
+.navbar-expand-md .navbar-collapse {
+  display: flex !important;
+  flex-basis: auto;
+  justify-content: flex-end;
+}
+a {
+  color: black;
+  text-decoration: none;
+  background-color: transparent;
+  width: unset;
+}
