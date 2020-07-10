@@ -57,7 +57,7 @@ const Venues = () => {
                     alt="performer"
                   />
                   <div>
-                    <Link to={`/user/${venue.state}`}>{venue.name}</Link>
+                    <Link to={`/venueevents/${venue.state}`}>{venue.name}</Link>
                     <div>
                       <span>State:</span>
                       {venue.state}

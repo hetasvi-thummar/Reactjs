@@ -74,7 +74,7 @@ const Events = (props) => {
         </div>
 
         <div className="row mt-5">
-          <div className="col-sm-12">
+          <div className="col-sm-8">
             {loading ? (
               <div>Loading...</div>
             ) : (

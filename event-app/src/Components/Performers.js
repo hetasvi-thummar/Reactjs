@@ -63,7 +63,7 @@ const Performers = () => {
                         alt="performer"
                       />
                       <div className="pname">
-                        <Link to={`/user/${performer.slug}`}>
+                        <Link to={`/performerevents/${performer.slug}`}>
                           {performer.name}
                         </Link>
                       </div>

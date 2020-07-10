@@ -13,7 +13,7 @@ import {
   Collapse,
   NavbarText,
 } from "reactstrap";
-import title from "./images/title.jpg";
+import title from "./images/headerp.jpg";
 
 const Title = (props) => {
   // console.log(`title:${JSON.stringify(props)}`);

@@ -31,7 +31,7 @@ const Performerevents = (props) => {
 
         <div className="row mt-5">
           <div className="col-sm-8">
-          {singleperformer !== null ? }
+  {singleperformer === null ? <div>No Data Found!!!</div> 
             {singleperformer !== null &&
               singleperformer.map((event) => (
                 <div key={event.id}>
@@ -61,6 +61,7 @@ const Performerevents = (props) => {
                   </div>
                 </div>
               ))}
+              
           </div>
         </div>
       </div>
